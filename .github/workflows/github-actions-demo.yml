@@ -4,10 +4,13 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Set execute permission for Maven wrapper
+        run: chmod +x ./mvnw
+
       - name: Build and test
         run: ./mvnw clean package
       - name: Build Docker image
