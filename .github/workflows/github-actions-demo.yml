@@ -4,10 +4,16 @@ on:
       - master
 
 jobs:
-  build:                        # Added a job name here ('build')
-    runs-on: ubuntu-latest       # Proper indentation for 'runs-on'
-    steps:                       # Steps should also be indented under the job name
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
       - name: Set execute permission for Maven wrapper
         run: chmod +x ./mvnw
