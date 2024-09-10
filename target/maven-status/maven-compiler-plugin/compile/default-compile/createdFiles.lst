@@ -1,0 +1,17 @@
+com\example\student_database\Controller\StudentController.class
+com\example\student_database\Repository\PassportRepository.class
+com\example\student_database\Entity\Student.class
+com\example\student_database\Repository\CourseRepository.class
+com\example\student_database\Controller\CourseController.class
+com\example\student_database\Entity\Review.class
+com\example\student_database\Controller\PassportController.class
+com\example\student_database\Repository\StudentRepository.class
+com\example\student_database\Service\PassportService.class
+com\example\student_database\Service\ReviewService.class
+com\example\student_database\Repository\ReviewRespository.class
+com\example\student_database\Service\StudentService.class
+com\example\student_database\Controller\ReviewController.class
+com\example\student_database\Entity\Passport.class
+com\example\student_database\StudentDatabaseApplication.class
+com\example\student_database\Service\CourseService.class
+com\example\student_database\Entity\Course.class
