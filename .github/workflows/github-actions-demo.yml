@@ -4,15 +4,17 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
-    steps:
+  build:                        # Added a job name here ('build')
+    runs-on: ubuntu-latest       # Proper indentation for 'runs-on'
+    steps:                       # Steps should also be indented under the job name
       - uses: actions/checkout@v2
-      
+
       - name: Set execute permission for Maven wrapper
         run: chmod +x ./mvnw
 
       - name: Build and test
         run: ./mvnw clean package
+
       - name: Build Docker image
         run: |
           docker build -t my-student-boot-app .
