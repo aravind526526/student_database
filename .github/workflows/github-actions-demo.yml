@@ -12,6 +12,6 @@ jobs:
         run: ./mvnw clean package
       - name: Build Docker image
         run: |
-          docker build -t my-spring-boot-app .
-          docker tag my-spring-boot-app my-docker-registry/my-spring-boot-app
-          docker push my-docker-registry/my-spring-boot-app
+          docker build -t my-student-boot-app .
+          docker tag my-student-boot-app aravind526526/student_database
+          docker push aravind526526/student_database
