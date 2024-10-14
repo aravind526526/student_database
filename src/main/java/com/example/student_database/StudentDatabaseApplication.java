@@ -1,6 +1,6 @@
 package com.example.student_database;
 
-import com.example.student_database.Controller.CourseController;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ public class StudentDatabaseApplication {
 
 		SpringApplication.run(StudentDatabaseApplication.class, args);
 
-
+//comments
 	}
 
 }
