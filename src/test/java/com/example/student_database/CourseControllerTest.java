@@ -29,6 +29,7 @@ public class CourseControllerTest {
     @Test
     void addtest()
     {
+        //added test case
         String name=courseController.add(model);
         assertEquals("course-form",name);
         verify(model).addAttribute(eq("theCourse"),any(Course.class));
