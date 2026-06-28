@@ -18,11 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/reviews")
 public class ReviewController
 {
-    @Autowired
+  
     private ReviewService reviewService;
-
-    @Autowired
     private CourseService courseService;
+    public ReviewController(ReviewService reviewService, CourseService courseService)
+    {
+        this.reviewService = reviewService;
+        this.courseService = courseService;
+    }
 
     @GetMapping("/add")
     public String add(Model model, @RequestParam("id") int id)

@@ -1,18 +1,25 @@
 package com.example.student_database.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
 public class Review
 {
-    @Id
+   @Id
     @GeneratedValue
     private int id;
+
     @Column(nullable = false)
     private String rating;
+
     @Column(nullable = false)
     private String description;
+
     @ManyToOne
+    @JoinColumn(name = "course_id")
+    @JsonIgnore
     private Course course;
 
     public Review(String rating, String description) {

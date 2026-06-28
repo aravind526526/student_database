@@ -14,7 +14,7 @@ public class Student {
     @Column
     private String name;
 
-    @OneToOne
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Passport passport;
 
     @ManyToMany
