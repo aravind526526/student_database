@@ -8,6 +8,7 @@ import com.example.student_database.Entity.Student;
 import com.example.student_database.Service.CourseService;
 import com.example.student_database.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +23,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/students")
 public class StudentController
 {
-    @Autowired
     private StudentService studentService;
-
-    @Autowired
     private CourseService courseService;
+    public StudentController(StudentService studentService, CourseService courseService)
+    {
+        this.studentService = studentService;
+        this.courseService = courseService;
+    }
+
+    // @GetMapping("/")
+    // public String findAll(Model model)
+    // {
+    //     List<Student> students = studentService.findAll();
+    //     model.addAttribute("students", students);
+    //     return "student-list";
+
+    // }
 
     @GetMapping("/")
-    public String findAll(Model model)
+    public ResponseEntity<List<Student>> findAll1()
     {
         List<Student> students = studentService.findAll();
-        model.addAttribute("students", students);
-        return "student-list";
-
+        return ResponseEntity.ok(students); 
     }
 
     @GetMapping("/add")

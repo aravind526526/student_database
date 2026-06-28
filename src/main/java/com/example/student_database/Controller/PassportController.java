@@ -18,11 +18,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/passports")
 public class PassportController
 {
-    @Autowired
+    
     private StudentService studentService;
-
-    @Autowired
     private PassportService passportService;
+
+    public PassportController(StudentService studentService, PassportService passportService)
+    {
+        this.studentService = studentService;
+        this.passportService = passportService;
+    }
 
     @GetMapping("/add")
     public String add(Model model, @RequestParam("id") int id)
