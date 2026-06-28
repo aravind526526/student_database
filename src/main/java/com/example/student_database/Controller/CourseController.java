@@ -5,7 +5,6 @@ import java.util.List;
 import com.example.student_database.Entity.Course;
 import com.example.student_database.Entity.Review;
 import com.example.student_database.Service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/courses")
 public class CourseController
 {
-    @Autowired
+    
     private CourseService courseService;
+
+    public CourseController(CourseService courseService)
+    {
+        this.courseService = courseService;
+    }
 
     @GetMapping("")
     public String findAll(Model model)
